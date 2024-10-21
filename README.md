@@ -1,27 +1,22 @@
-# PaintWorkshop
+# Progressive Web Apps für Desktop und Mobile mit Angular (Hands-on)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+[Angular Days Berlin 2024](https://javascript-days.de/angular/), 22. Oktober 2024, 13:30–17:00
 
-## Development server
+Trainer: Christian Liebel ([@christianliebel](https://x.com/christianliebel))
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+Progressive Web Apps sind ein plattformübergreifend einsetzbares Anwendungsmodell auf Web-Basis. Dank Project Fugu, einer Initiative der Chrome-Contributors Google, Microsoft und Intel, wird das Web um noch mächtigere Features erweitert. Damit können Entwickler endlich auch Produktivitäts-Apps wie Büro- und Bearbeitungsprogramme oder IDEs sinnvoll ins Web bringen.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installationsanweisungen
 
-## Build
+Sie können mitentwickeln: Bitte bringen Sie dazu Ihr Notebook mit installiertem [Google Chrome](https://www.google.com/chrome/) ([Canary](https://www.google.com/chrome/canary/)), [Git](https://git-scm.com/), [Node.js](https://nodejs.org/) und [WebStorm](https://www.jetbrains.com/webstorm/) oder [Visual Studio Code](https://code.visualstudio.com/) mit.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Es ist ein uneingeschränkter Internetzugriff erforderlich (ohne Gruppenrichtlinien, Unternehmensproxys und -firewalls), bitte im Zweifel das Privatnotebook einpacken.
 
-## Running unit tests
+Nach dem Klonen des Repositorys führen Sie bitte folgende Kommandos auf der Kommandozeile aus:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```sh
+npm i
+npm start
+```
