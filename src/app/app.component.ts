@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, viewChild, ViewChild } from '@angular/core';
 import { PaintService } from "./paint.service";
 
 @Component({
@@ -11,6 +11,8 @@ export class AppComponent implements AfterViewInit {
   private readonly paintService = inject(PaintService);
 
   // LAB #1
+  canvas = viewChild
+      .required<ElementRef<HTMLCanvasElement>>('canvas');
   // LAB #2.1
   // LAB #5
   // LAB #11
