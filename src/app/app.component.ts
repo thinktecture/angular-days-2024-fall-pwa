@@ -18,6 +18,12 @@ export class AppComponent implements AfterViewInit {
   // LAB #5
   previousPoint?: { x: number, y: number };
   // LAB #11
+  readonly fileOptions: FilePickerOptions = {
+    types: [{
+      description: 'PNG files',
+      accept: {'image/png': ['.png']}
+    }]
+  };
   // LAB #17
 
   ngAfterViewInit(): void {
@@ -65,6 +71,11 @@ export class AppComponent implements AfterViewInit {
 
   async save() {
     // LAB #11
+    const blob = await this.paintService.toBlob(this.canvas().nativeElement);
+    const handle = await window.showSaveFilePicker(this.fileOptions);
+    const writable = await handle.createWritable();
+    await writable.write(blob);
+    await writable.close();
   }
 
   async copy() {
