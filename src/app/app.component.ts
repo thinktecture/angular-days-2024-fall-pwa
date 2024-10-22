@@ -84,6 +84,11 @@ export class AppComponent implements AfterViewInit {
 
   async copy() {
     // LAB #13
+    await navigator.clipboard.write([
+        new ClipboardItem({
+          "image/png": this.paintService.toBlob(this.canvas().nativeElement)
+        }),
+    ]);
   }
 
   async paste() {
