@@ -4,4 +4,8 @@
     <!-- LAB #6 -->
 </nav>
 <!-- LAB #1 and 4 -->
-<canvas #canvas width="600" height="480"></canvas>
+<canvas #canvas width="600" height="480"
+    (pointerdown)="onPointerDown($event)"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp()"
+></canvas>
