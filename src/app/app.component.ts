@@ -67,6 +67,10 @@ export class AppComponent implements AfterViewInit {
 
   async open() {
     // LAB #12
+    const [handle] = await window.showOpenFilePicker(this.fileOptions);
+    const file = await handle.getFile();
+    const image = await this.paintService.getImage(file);
+    this.context.drawImage(image, 0, 0);
   }
 
   async save() {
