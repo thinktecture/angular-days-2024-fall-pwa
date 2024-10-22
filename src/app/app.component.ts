@@ -25,6 +25,13 @@ export class AppComponent implements AfterViewInit {
     }]
   };
   // LAB #17
+  readonly supported = {
+    open: 'showOpenFilePicker' in window,
+    save: 'showSaveFilePicker' in window,
+    copy: navigator.clipboard && 'write' in navigator.clipboard,
+    paste: navigator.clipboard && 'read' in navigator.clipboard,
+    share: 'canShare' in navigator,
+  } as const;
 
   ngAfterViewInit(): void {
     // LAB #2.2, 2.3 and 3
@@ -76,10 +83,22 @@ export class AppComponent implements AfterViewInit {
   async save() {
     // LAB #11
     const blob = await this.paintService.toBlob(this.canvas().nativeElement);
+    
+    if (this.supported.save) {
     const handle = await window.showSaveFilePicker(this.fileOptions);
     const writable = await handle.createWritable();
     await writable.write(blob);
     await writable.close();
+
+    } else {
+      const anchor = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      anchor.href = url;
+      anchor.download = '';
+      anchor.click();
+      URL.revokeObjectURL(url);
+
+    }
   }
 
   async copy() {
